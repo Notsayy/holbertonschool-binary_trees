@@ -3,8 +3,8 @@
 #include <stdlib.h>
 
 /** 
- * binary_tree_insert_left - function that inserts a node as 
- * the left-child of another node
+ * binary_tree_insert_right - function that inserts a node as 
+ * the right-child of another node
  *
  * @parent: pointer
  * @value: int
@@ -12,7 +12,7 @@
  * Return: new
 */
 
-binary_tree_t *binary_tree_insert_left(binary_tree_t *parent, int value)
+binary_tree_t *binary_tree_insert_right(binary_tree_t *parent, int value)
 {
     binary_tree_t *new;
 new = malloc(sizeof(binary_tree_t));
@@ -22,9 +22,9 @@ new = malloc(sizeof(binary_tree_t));
     if (parent == NULL) 
         return binary_tree_node(parent, value);
 
-if (value < parent->n)
+if (value > parent->n)
     {
-        parent->left = binary_tree_insert_left(parent->left, value);
+        parent->right = binary_tree_insert_right(parent->right, value);
     }
 return (new);
 }
